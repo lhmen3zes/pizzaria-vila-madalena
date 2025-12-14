@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pizzaria Vila Madalena</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0b0b;
+      --card:#121212;
+      --text:#f2f2f2;
+      --muted:#b3b3b3;
+      --accent:#e53935;
+      --green:#25D366;
+      --pink:#E4405F;
+      --blue:#4285F4;
+      --orange:#FF9800;
+      --red:#EA1D2C;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; background:#000; color:var(--text);
+      font-family:Inter,system-ui; -webkit-font-smoothing:antialiased;
+    }
+    .wrap{max-width:720px; margin:0 auto; padding:24px}
+    .brand{display:flex; flex-direction:column; align-items:center; gap:12px; margin:20px 0}
+    .logo{width:96px; height:96px; border-radius:16px; overflow:hidden; background:#111}
+    .logo img{width:100%; height:auto; display:block}
+    .title{font-family:"Playfair Display", serif; font-weight:600; font-size:24px; text-align:center}
+    .slogan{color:var(--muted); font-size:14px; text-align:center; max-width:480px}
+    .tricolor{display:flex; gap:4px; justify-content:center; margin-top:6px}
+    .tricolor span{height:3px; width:24px; border-radius:2px}
+    .tricolor .g{background:#2ecc71}
+    .tricolor .w{background:#fff; opacity:.9}
+    .tricolor .r{background:#e53935}
+    .grid{display:flex; flex-direction:column; gap:14px; margin:24px 0}
+    .btn{
+      display:flex; align-items:center; gap:12px; padding:16px; border-radius:14px;
+      background:var(--card); color:var(--text); text-decoration:none;
+      border:2px solid transparent; transition:.3s;
+      position:relative; overflow:hidden;
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .icon{width:22px; height:22px}
+    .btn .text{display:flex; flex-direction:column; gap:2px}
+    .btn .text strong{font-weight:600; font-size:15px}
+    .btn .text .sub{color:var(--muted); font-size:12px}
+    /* cores oficiais dos ícones */
+    .whatsapp .icon{filter:invert(42%) sepia(92%) saturate(355%) hue-rotate(90deg)}
+    .instagram .icon{filter:invert(34%) sepia(96%) saturate(747%) hue-rotate(320deg)}
+    .maps .icon{filter:invert(36%) sepia(92%) saturate(749%) hue-rotate(190deg)}
+    .menu .icon{filter:invert(62%) sepia(92%) saturate(749%) hue-rotate(20deg)}
+    .ifood .icon{filter:invert(23%) sepia(96%) saturate(747%) hue-rotate(350deg)}
+    /* brilho tricolor nas bordas dos botões */
+    .btn::before{
+      content:""; position:absolute; inset:0; border-radius:14px;
+      padding:2px; background:linear-gradient(90deg,#2ecc71,#fff,#e53935);
+      -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+      -webkit-mask-composite:xor; mask-composite:exclude;
+      opacity:0; transition:opacity .3s ease;
+    }
+    .btn:hover::before{opacity:1}
+    .footer{margin:24px 0; color:#9a9a9a; font-size:11px; text-align:center}
+    /* ajustes para telas maiores */
+    @media (min-width:600px){
+      .title{font-size:32px}
+      .slogan{font-size:15px}
+      .btn{padding:20px}
+      .icon{width:24px; height:24px}
+      .btn .text strong{font-size:16px}
+      .btn .text .sub{font-size:13px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="brand">
+      <div class="logo">
+        <img src="logo-pizzaria.jpg" alt="Logo Pizzaria Vila Madalena">
+      </div>
+      <div class="title">Pizzaria Vila Madalena</div>
+      <div class="slogan">Tradição, qualidade e muito sabor em cada pedaço!</div>
+      <div class="tricolor">
+        <span class="g"></span><span class="w"></span><span class="r"></span>
+      </div>
+    </header>
+
+    <main class="grid">
+      <a class="btn whatsapp" href="https://wa.me/5517988371079?text=Ol%C3%A1,%20gostaria%20de%20fazer%20um%20pedido!" target="_blank">
+        <img class="icon" src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/whatsapp.svg" alt="">
+        <div class="text"><strong>WhatsApp</strong><span class="sub">Peça já pelo WhatsApp</span></div>
+      </a>
+
+      <a class="btn instagram" href="https://www.instagram.com/pizzaria_vilamadalena" target="_blank">
+        <img class="icon" src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" alt="">
+        <div class="text"><strong>Instagram</strong><span class="sub">Siga nossas novidades</span></div>
+      </a>
+
+      <a class="btn maps" href="https://maps.app.goo.gl/5oNWWHWSg2rrwtC89" target="_blank">
+        <img class="icon" src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/googlemaps.svg" alt="">
+        <div class="text"><strong>Localização</strong><span class="sub">Veja no Google Maps</span></div>
+      </a>
+
+      <a class="btn menu" href="https://www.whatsmenu.com.br/pizzariavilamadalena" target="_blank">
+        <img class="icon" src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/readthedocs.svg" alt="">
+        <div class="text"><strong>Cardápio Online</strong><span class="sub">Confira e faça seu pedido</span></div>
+      </a>
+
+      <a class="btn ifood" href="https://www.ifood.com.br/delivery/sao-jose-do-rio-preto-sp/pizzaria-vila-madalena-residencial-vila-madalena/9faf8d59-bcba-456d-b8d9-f77d9d34d672" target="_blank">
+        <img class="icon" src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/ifood.svg" alt="">
+        <div class="text"><strong>Delivery (iFood)</strong><span class="sub">Peça pelo aplicativo</span></div>
+      </a>
+    </main>
+
+    <footer class="footer">
+      © 2025 Pizzaria Vila Madalena • Todos os direitos reservados
+    </footer>
+  </div>
+</body>
+</html>
